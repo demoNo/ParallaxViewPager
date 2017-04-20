@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         private int[] data;
 
         public Adapter() {
-            data = new int[]{0, 1, 2};
+            data = new int[]{0, 1, 2, 3};
         }
 
         @Override

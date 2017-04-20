@@ -11,7 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.util.Log;
 
 import li.yohan.library.R;
 
@@ -85,11 +84,6 @@ public class ParallaxViewPager extends ViewPager {
                 src.left = ((int) (offset * ratio * speedRatio));
                 src.right = (int) (src.left + getMeasuredWidth() / bitmapScale);
 
-                Log.i(TAG, "src left: " + src.left);
-                Log.i(TAG, "src right: " + src.right);
-                Log.i(TAG, "final width: " + getMeasuredWidth() / bitmapScale * speedRatio * getAdapter().getCount());
-                Log.i(TAG, "=================================");
-
                 dst.left = (int) offset;
                 dst.right = dst.left + getMeasuredWidth();
                 invalidate();
@@ -144,12 +138,14 @@ public class ParallaxViewPager extends ViewPager {
         int sectionWidth = mBitmap.getWidth() / getAdapter().getCount();
         ratio = ((float) sectionWidth) / ((float) getMeasuredWidth());
 
-        // calculate final scaled bitmap width
-//        float finalWidth = ratio * speedRatio * getMeasuredWidth() *
-//        if (finalWidth > mBitmap.getWidth()) {
-//            // if final bitmap source width lager than bitmap original width then recalculate speed ratio
-//
-//        }
+        // final source rect right edge
+        int finalSourceRight = (int) (getMeasuredWidth() / bitmapScale + ((getAdapter().getCount
+                () - 1) * getMeasuredWidth() * ratio * speedRatio));
+        if (finalSourceRight > mBitmap.getWidth()) {
+            // lager than bitmap width then reset speedRatio
+            speedRatio = (mBitmap.getWidth() - getMeasuredWidth() / bitmapScale) / ((getAdapter()
+                    .getCount() - 1) * getMeasuredWidth() * ratio);
+        }
     }
 
     /**
