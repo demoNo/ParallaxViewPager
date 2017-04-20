@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="li.yohan.parallaxviewpager.MainActivity">
+
+
+    <li.yohan.parallax.ParallaxViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/welcome_bg"/>
+
+
+</RelativeLayout>
