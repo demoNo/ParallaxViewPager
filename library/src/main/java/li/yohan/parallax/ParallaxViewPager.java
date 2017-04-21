@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import li.yohan.library.R;
 
@@ -35,9 +36,6 @@ public class ParallaxViewPager extends ViewPager {
 
     private static final float DEFAULT_SPEED_RATIO = 0.5f;
 
-    private int bitmapWidth = 0;
-    private int bitmapHeight = 0;
-
     // bitmap scale
     private float bitmapScale = 0.0f;
 
@@ -60,7 +58,7 @@ public class ParallaxViewPager extends ViewPager {
                 array.recycle();
             }
         }
-        initPager();
+        initSource();
     }
 
     @Override
@@ -95,6 +93,7 @@ public class ParallaxViewPager extends ViewPager {
     public void setBackgroundResource(@DrawableRes int resid) {
         if (mBitmap == null) {
             mBitmap = BitmapFactory.decodeResource(getResources(), resid);
+            initSource();
         }
     }
 
@@ -102,6 +101,7 @@ public class ParallaxViewPager extends ViewPager {
     public void setBackground(Drawable background) {
         if (mBitmap == null) {
             mBitmap = ((BitmapDrawable) background).getBitmap();
+            initSource();
         }
     }
 
@@ -112,7 +112,6 @@ public class ParallaxViewPager extends ViewPager {
             int curCount = getAdapter().getCount();
             if (curCount != oldCount) {
                 calculateRatio();
-                src.right = (int) (getMeasuredWidth() / bitmapScale);
             }
             oldCount = curCount;
         }
@@ -132,6 +131,10 @@ public class ParallaxViewPager extends ViewPager {
      * calculate the size and ratio after bitmap stretching
      */
     private void calculateRatio() {
+        if (mBitmap.getWidth() < getMeasuredWidth()) {
+            Log.w(TAG, "Invalidate background bitmap, bitmap width must larger than ViewPager width");
+        }
+
         bitmapScale = ((float) getMeasuredHeight()) / ((float) mBitmap.getHeight());
         src.right = (int) (getMeasuredWidth() / bitmapScale);
 
@@ -145,14 +148,16 @@ public class ParallaxViewPager extends ViewPager {
             // lager than bitmap width then reset speedRatio
             speedRatio = (mBitmap.getWidth() - getMeasuredWidth() / bitmapScale) / ((getAdapter()
                     .getCount() - 1) * getMeasuredWidth() * ratio);
+            speedRatio = speedRatio <= 0 ? 1 : speedRatio;
         }
     }
 
     /**
      * init viewpager configuration
      */
-    private void initPager() {
+    private void initSource() {
         if (mBitmap != null) {
+            src = new Rect();
             src.top = 0;
             src.bottom = mBitmap.getHeight();
             src.left = 0;
@@ -169,7 +174,7 @@ public class ParallaxViewPager extends ViewPager {
     }
 
     /**
-     * set background move speed ratio the lager the value the slower the speed vice versa the
+     * set background move speed ratio the lager the value the slower the speed vice versa, the
      * value must be between 0 and 1
      *
      * @param speedRatio

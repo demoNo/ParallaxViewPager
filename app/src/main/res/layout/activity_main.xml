@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<li.yohan.parallax.ParallaxViewPager
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pager"
+    app:speedRatio="1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="li.yohan.parallaxviewpager.MainActivity">
+    android:background="@drawable/background"/>
 
 
-    <li.yohan.parallax.ParallaxViewPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_small"/>
-
-
-</RelativeLayout>

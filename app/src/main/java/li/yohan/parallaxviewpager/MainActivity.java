@@ -2,8 +2,8 @@ package li.yohan.parallaxviewpager;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.jakewharton.salvage.RecyclingPagerAdapter;
 
 import li.yohan.parallax.ParallaxViewPager;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,12 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     class Adapter extends RecyclingPagerAdapter {
 
-        private int[] data;
-
-        public Adapter() {
-            data = new int[]{0, 1, 2, 3};
-        }
-
         @Override
         public View getView(int position, View convertView, ViewGroup container) {
             if (convertView == null) {
@@ -43,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 ((TextView) convertView).setGravity(Gravity.CENTER);
                 ((TextView) convertView).setTextSize(TypedValue.COMPLEX_UNIT_SP, 60);
                 ((TextView) convertView).setTypeface(null, Typeface.BOLD);
-                ((TextView) convertView).setTextColor(Color.parseColor("#3c3c3c"));
+                ((TextView) convertView).setTextColor(Color.parseColor("#ffffff"));
                 convertView.setLayoutParams(layoutParams);
             }
             ((TextView) convertView).setText(position + "");
@@ -52,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return data.length;
+            return 4;
         }
     }
 
