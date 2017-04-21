@@ -24,7 +24,7 @@ allprojects {
 * Add the dependency
 ```Gradle
 dependencies {
-	    compile 'li.yohan.parallax:ParallaxViewPager:v1.0.0'
+    compile 'li.yohan.parallax:ParallaxViewPager:v1.0.0'
 }
 ```
 
@@ -34,19 +34,19 @@ Maven
 * Add the JitPack repository to your build file
 ```xml
 <repositories>
-	<repository>
-	    <id>jitpack.io</id>
-	    <url>https://jitpack.io</url>
-	</repository>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
 </repositories>
 ```
 
 * Add the dependency
 ```xml
 <dependency>
-	<groupId>li.yohan.parallax</groupId>
-	<artifactId>ParallaxViewPager</artifactId>
-	<version>v1.0.0</version>
+    <groupId>li.yohan.parallax</groupId>
+    <artifactId>ParallaxViewPager</artifactId>
+    <version>v1.0.0</version>
 </dependency>
 ```
 
@@ -56,9 +56,9 @@ Maven
 
 ```xml
 <li.yohan.parallax.ParallaxViewPager
-     android:id="@+id/viewPager"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent" />
+    android:id="@+id/viewPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
 ```
 
 ```Java
