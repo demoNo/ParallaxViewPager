@@ -91,7 +91,7 @@ setBackground(Drawable background)
      android:id="@+id/viewPager"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
--    app:speedRatio="0.5f" />
++    app:speedRatio="0.5f" />
 ```
 * also set in code
 ```diff
