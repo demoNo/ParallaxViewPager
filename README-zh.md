@@ -66,16 +66,16 @@ setBackground(Drawable background)
 
 * 在xml中设置速率比
 ```diff
-<li.yohan.parallax.ParallaxViewPager
-    android:id="@+id/viewPager"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    +app:speedRatio="0.5f" />
+ <li.yohan.parallax.ParallaxViewPager
+     android:id="@+id/viewPager"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
++    app:speedRatio="0.5f" />
 ```
 * 在代码中设置速率比
 ```diff
-ParallaxViewPager mPager = ((ParallaxViewPager) findViewById(R.id.pager));
-mPager.setAdapter(new Adapter());
+ ParallaxViewPager mPager = ((ParallaxViewPager) findViewById(R.id.pager));
+ mPager.setAdapter(new Adapter());
 +mPager.setSpeedRatio(0.5f);
 ```
 
