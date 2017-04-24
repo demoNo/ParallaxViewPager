@@ -30,7 +30,7 @@ allprojects {
 * 在app目录的`build.gralde`配置
 ```Gradle
 dependencies {
-    compile 'li.yohan.parallax:ParallaxViewPager:v1.0.0'
+    compile 'com.github.demoNo:ParallaxViewPager:v1.0.0'
 }
 ```
 
