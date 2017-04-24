@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 //JitPack Maven
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='li.yohan.parallax'
+group='com.github.demoNo'
 
 android {
     compileSdkVersion 25
