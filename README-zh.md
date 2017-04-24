@@ -1,6 +1,7 @@
 # ParallaxViewPager
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![](https://jitpack.io/v/demoNo/ParallaxViewPager.svg)](https://jitpack.io/#demoNo/ParallaxViewPager)
 
 README: [English](https://github.com/demoNo/ParallaxViewPager/blob/master/README.md)
 
