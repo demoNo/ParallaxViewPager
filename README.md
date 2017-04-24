@@ -87,16 +87,16 @@ setBackground(Drawable background)
 
 * you can set speed ratio in xml
 ```diff
-<li.yohan.parallax.ParallaxViewPager
-    android:id="@+id/viewPager"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    +app:speedRatio="0.5f" />
+ <li.yohan.parallax.ParallaxViewPager
+     android:id="@+id/viewPager"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    app:speedRatio="0.5f" />
 ```
 * also set in code
 ```diff
-ParallaxViewPager mPager = ((ParallaxViewPager) findViewById(R.id.pager));
-mPager.setAdapter(new Adapter());
+ ParallaxViewPager mPager = ((ParallaxViewPager) findViewById(R.id.pager));
+ mPager.setAdapter(new Adapter());
 +mPager.setSpeedRatio(0.5f);
 ```
 
