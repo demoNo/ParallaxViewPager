@@ -30,7 +30,7 @@ allprojects {
 * Add the dependency
 ```Gradle
 dependencies {
-    compile 'li.yohan.parallax:ParallaxViewPager:v1.0.0'
+    compile 'com.github.demoNo:ParallaxViewPager:v1.0.0'
 }
 ```
 
@@ -50,7 +50,7 @@ Maven
 * Add the dependency
 ```xml
 <dependency>
-    <groupId>li.yohan.parallax</groupId>
+    <groupId>com.github.demoNo</groupId>
     <artifactId>ParallaxViewPager</artifactId>
     <version>v1.0.0</version>
 </dependency>
