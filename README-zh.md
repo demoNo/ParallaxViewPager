@@ -2,21 +2,21 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-README: [English](https://github.com/demoNo/ParallaxViewPager/blob/master/README.md) | [中文](https://github.com/demoNo/ParallaxViewPager/blob/master/README-zh.md)
+README: [English](https://github.com/demoNo/ParallaxViewPager/blob/master/README.md)
 
-* **The first gif** `foreground speed = 2*background speed` witch is `speedRatio = 0.5`
+* **图 1** 前景速度是背景速度的2倍 当前 `speedRatio = 0.5`
 
 ![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_0.5.gif)
 
-* **the second gif** `foreground speed = background speed` witch is `speedRatio = 1`
+* **图2** 前后速度一致（会有些误差），当前 `speedRatio = 1`
 
 ![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_1.gif)
 
-## Add to your project
+## 添加依赖
 
 Gradle
 
-* Add it in your root build.gradle at the end of repositories:
+* 在工程的根目录`build.gralde`配置
 ```Gradle
 allprojects {
     repositories {
@@ -26,38 +26,16 @@ allprojects {
 }
 ```
 
-* Add the dependency
+* 在app目录的`build.gralde`配置
 ```Gradle
 dependencies {
     compile 'li.yohan.parallax:ParallaxViewPager:v1.0.0'
 }
 ```
 
+## 使用
 
-Maven
-
-* Add the JitPack repository to your build file
-```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
-
-* Add the dependency
-```xml
-<dependency>
-    <groupId>li.yohan.parallax</groupId>
-    <artifactId>ParallaxViewPager</artifactId>
-    <version>v1.0.0</version>
-</dependency>
-```
-
-## Usage
-
-* Just like normal ViewPager
+* 像正常使用ViewPager一样
 
 ```xml
 <li.yohan.parallax.ParallaxViewPager
@@ -71,21 +49,22 @@ ParallaxViewPager mPager = ((ParallaxViewPager) findViewById(R.id.pager));
 mPager.setAdapter(new Adapter());
 ```
 
-set background image just like ViewPager.
+设置背景的方式和普通的 `ViewPager` 基本一致
 
-you can set in xml
+在xml中设置
 
 `android:background="@drawable/background"`
 
-or in code
+或者在代码中设置
 ```Java
 setBackgroundResource(int resid)
 setBackground(Drawable background)
 ```
 
-## Configuration
 
-* you can set speed ratio in xml
+## 设置
+
+* 在xml中设置速率比
 ```diff
 <li.yohan.parallax.ParallaxViewPager
     android:id="@+id/viewPager"
@@ -93,21 +72,21 @@ setBackground(Drawable background)
     android:layout_height="match_parent"
     +app:speedRatio="0.5f" />
 ```
-* also set in code
+* 在代码中设置速率比
 ```diff
 ParallaxViewPager mPager = ((ParallaxViewPager) findViewById(R.id.pager));
 mPager.setAdapter(new Adapter());
 +mPager.setSpeedRatio(0.5f);
 ```
 
-> **Note: the default ratio is 0.5f**
+> **默认的速率比是0.5**
 
-## Restrictions
+## 限制
 
-1. The background image's width should larger than height.
-2. The background image's width should larger than ViewPager's width.
-3. You can't set pager with padding.
-4. If the ratio that user set is not proper, it will be recalculate and reset.
+1. 背景图片宽度应该大于高度
+2. 背景图片的宽度应该大于 ViewPager 的宽度
+3. ViewPager 不能设置padding
+4. 如果速率比设置不对的话，会自动设置一个合适的值保证图片不会出现超出边界的问题
 
 ## Licence
 
