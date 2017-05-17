@@ -5,13 +5,9 @@
 
 README: [English](https://github.com/demoNo/ParallaxViewPager/blob/master/README.md)
 
-* **图 1** 前景速度是背景速度的2倍 当前 `speedRatio = 0.5`
-
-![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_0.5.gif)
-
-* **图2** 前后速度一致（会有些误差），当前 `speedRatio = 1`
-
-![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_1.gif)
+图 1<br/> 前景速度是背景速度的2倍 当前 `speedRatio = 0.5` | 图 2<br/> 前后速度一致（会有些误差），当前 `speedRatio = 1`
+---|---
+![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_0.5.gif) | ![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_1.gif)
 
 ## 添加依赖
 
