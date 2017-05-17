@@ -5,13 +5,9 @@
 
 [中文](https://github.com/demoNo/ParallaxViewPager/blob/master/README-zh.md)
 
-* **The first gif** `foreground speed = 2*background speed` witch is `speedRatio = 0.5`
-
-![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_0.5.gif)
-
-* **the second gif** `foreground speed = background speed` witch is `speedRatio = 1`
-
-![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_1.gif)
+The first gif <br />`foreground speed = 2*background speed` witch is `speedRatio = 0.5` | the second gif<br /> `foreground speed = background speed` witch is `speedRatio = 1`
+---|---
+![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_0.5.gif) | ![](https://raw.githubusercontent.com/demoNo/ParallaxViewPager/master/art/rate_1.gif)
 
 ## Add to your project
 
